@@ -5,6 +5,7 @@
   <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
 </h1>
 </div>
+
 :hammer_and_wrench: Languages and Tools :
 <div>
 <img src="https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg"  title="C" alt="C" width="40" height="40"/>&nbsp;
@@ -16,8 +17,12 @@
 <img src="https://github.com/devicons/devicon/blob/master/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" title="AWS" alt="AWS" width="40" height="40"/>&nbsp;
 <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" **alt="Git" width="40" height="40"/>
 </div>
+
+---
+
 :fire: My Stats :
 <div>
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Nathandona&theme=dark)](https://github.com/anuraghazra/github-readme-stats)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Nathandona&langs_count=8)](https://github.com/anuraghazra/github-readme-stats)
+	
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Nathandona&langs_count=10)](https://github.com/anuraghazra/github-readme-stats)
+	
 </div>
