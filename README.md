@@ -5,7 +5,7 @@
     <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
   </h1>
   <h3>Full-stack Dev & Entrepreneur | Nice, FR</h3>
-  <p>Next.js | Tauri | React Native | Trading Bots | SaaS</p>
+  <p>Next.js | React Native | QT/C++ </p>
 </div>
 
 Languages and Tools:
@@ -29,19 +29,17 @@ Languages and Tools:
 ---
 
 Featured Projects:
-- Exogen (Trading Platform): Next.js dashboard + Rust backtester. [![GitHub](https://img.shields.io/badge/Exogen-007ACC?style=for-the-badge&logo=github)](https://github.com/ExogenCorporation/Exo-OnRoot)
+- Exogen (Trading Platform): Next.js dashboard + Rust backtester.
 - SwiftTalk: Tauri + React desktop comms app. Privacy-first.
 - Omnilens: Three.js 3D model viewer for students.
 - Orba: Kanban SaaS with PostgreSQL.
 
-Web Agency: [Altair Studio](https://altair.studio)  
-Twitter: [@Nathandona](https://x.com/Nathandona)  
 Let's connect!
 
 ---
 
 My Stats:
 <div align="center">
-  [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Nathandona&langs_count=10&theme=radical&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
-  [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Nathandona&theme=radical)](https://github.com/DenverCoder1/github-readme-streak-stats)
+  [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Nathandona&langs_count=10&layout=compact&theme=radical)](https://github.com/anuraghazra/github-readme-stats)[attached_file:1]
+  [![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Nathandona&show_icons=true&theme=radical)](https://github.com/anuraghazra/github-readme-stats)[attached_file:1]
 </div>
