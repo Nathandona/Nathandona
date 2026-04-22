@@ -1,34 +1,63 @@
-<div id="header" align="center">
-  <h1>
-    hey there
-    <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
-  </h1>
-  <h3>Full-stack Dev & Entrepreneur | Nice, FR</h3>
-  <p>Next.js | React Native | QT/C++ </p>
-</div>
-
-Languages and Tools:
 <div align="center">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" title="C" alt="C" width="40" height="40"/>&nbsp;
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-plain-wordmark.svg" title="CSS3" alt="CSS" width="40" height="40"/>&nbsp;
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&nbsp;
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/solidity/solidity-original.svg" title="Solidity" alt="Solidity" width="40" height="40"/>&nbsp;
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" alt="NodeJS" width="40" height="40"/>&nbsp;
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original-wordmark.svg" title="Git" alt="Git" width="40" height="40"/>&nbsp;
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cmake/cmake-original.svg" title="CMake" alt="CMake" width="40" height="40"/>&nbsp;
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" title="C++" alt="C++" width="40" height="40"/>&nbsp;
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" title="TypeScript" alt="TypeScript" width="40" height="40"/>&nbsp;
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>&nbsp;
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original-wordmark.svg" title="Next.js" alt="Next.js" width="40" height="40"/>&nbsp;
+
+<img src="https://github.com/Nathandona.png" width="80" style="border-radius: 50%;" />
+
+# Nathan Dona
+
+**Full-stack Dev & Entrepreneur** · Nice, FR 🇫🇷
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js)
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)
+![Solidity](https://img.shields.io/badge/Solidity-363636?style=flat-square&logo=solidity)
+
 </div>
 
 ---
 
-Featured Projects:
-- Exogen (Trading Platform): Next.js dashboard + React Native Mobile + Backtester C++/QT.
-- SwiftTalk: Tauri + React desktop comms app. Privacy-first.
-- Omnilens: Three.js 3D model viewer for students.
-- Orba: Kanban SaaS with PostgreSQL.
+### About
 
-Let's connect!
+I build across the full stack — from performant C++ backends and cross-platform mobile apps to polished web interfaces. I'm interested in trading systems, developer tooling, and privacy-first software.
+
+---
+
+### Languages & Tools
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" width="34" height="34" />&nbsp;<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="34" height="34" />&nbsp;<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="34" height="34" />&nbsp;<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" width="34" height="34" />&nbsp;<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" width="34" height="34" />&nbsp;<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" width="34" height="34" />&nbsp;<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" width="34" height="34" />&nbsp;<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/solidity/solidity-original.svg" width="34" height="34" />&nbsp;<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" width="34" height="34" />&nbsp;<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cmake/cmake-original.svg" width="34" height="34" />&nbsp;<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width="34" height="34" />&nbsp;<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" width="34" height="34" />
+</div>
+
+---
+
+### Featured Projects
+
+| Project | Stack | Description |
+|---|---|---|
+| **Exogen** | Next.js · React Native · C++/QT | Full trading platform — web dashboard, mobile app & high-performance backtester |
+| **SwiftTalk** | Tauri · React | Privacy-first desktop comms app. Local-first, no telemetry |
+| **Omnilens** | Three.js | Interactive 3D model viewer for students |
+| **Orba** | PostgreSQL · SaaS | Kanban board SaaS with a clean data model |
+
+---
+
+### GitHub Stats
+
+<div align="center">
+
+![Nathan's GitHub stats](https://github-readme-stats.vercel.app/api?username=Nathandona&show_icons=true&hide_border=true&theme=default&hide_title=true)
+&nbsp;
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Nathandona&layout=compact&hide_border=true&theme=default)
+
+</div>
+
+---
+
+<div align="center">
+
+Open to collaborations and interesting problems.
+
+[![GitHub](https://img.shields.io/badge/GitHub-Nathandona-181717?style=flat-square&logo=github)](https://github.com/Nathandona)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/nathan-donadey)
+
+</div>
