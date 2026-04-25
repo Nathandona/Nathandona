@@ -13,7 +13,7 @@
   <a href="https://linkedin.com/in/nathan-donadey">
     <img src="https://img.shields.io/badge/LinkedIn-black?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
-  <a href="https://x.com/NathanDona_a">
+  <a href="https://x.com/NathanDona_">
     <img src="https://img.shields.io/badge/Twitter-black?style=for-the-badge&logo=x&logoColor=white" />
   </a>
 </div>
