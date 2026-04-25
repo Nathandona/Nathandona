@@ -8,9 +8,12 @@
 
 <div align="center">
   <a href="https://github.com/Nathandona">
-    <img src="https://img.shields.io/badge/Github-black?style=for-the-badge&logo=x&logoColor=white" />
+    <img src="https://img.shields.io/badge/Github-black?style=for-the-badge&logo=github&logoColor=white" />
   </a>
   <a href="https://linkedin.com/in/nathan-donadey">
     <img src="https://img.shields.io/badge/LinkedIn-black?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://x.com/NathanDona_a">
+    <img src="https://img.shields.io/badge/Twitter-black?style=for-the-badge&logo=x&logoColor=white" />
   </a>
 </div>
