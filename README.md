@@ -7,8 +7,8 @@
 </div>
 
 <div align="center">
-  <a href="https://github.com/Nathandona">
-    <img src="https://img.shields.io/badge/Github-black?style=for-the-badge&logo=github&logoColor=white" />
+  <a href="https://nathandona.com">
+    <img src="https://img.shields.io/badge/Website-black?style=for-the-badge&logo=About.me&logoColor=white" />
   </a>
   <a href="https://linkedin.com/in/nathan-donadey">
     <img src="https://img.shields.io/badge/LinkedIn-black?style=for-the-badge&logo=linkedin&logoColor=white" />
