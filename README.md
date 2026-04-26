@@ -3,7 +3,7 @@
   
   ## Software Engineer & Entrepreneur
   
- *"Clarity beats complexity"*
+ *“Clarity beats complexity”*
 </div>
 
 <div align="center">
