@@ -11,7 +11,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import opentype from 'opentype.js';
 import sharp from 'sharp';
-import { Globe02Icon, Mail01Icon, Linkedin01Icon, NewTwitterIcon } from '@hugeicons/core-free-icons';
+import { Mail01Icon, Linkedin01Icon, NewTwitterIcon } from '@hugeicons/core-free-icons';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(HERE, '..', 'assets');
@@ -43,7 +43,7 @@ const OUT_EASE = 'cubic-bezier(.2,.8,.2,1)';
 const IN_OUT = 'cubic-bezier(.65,0,.35,1)';
 
 const LINKS = [
-  { slug: 'site', label: 'nathandona.com', icon: Globe02Icon },
+  { slug: 'site', label: 'nathandona.com', icon: 'avatar' },
   { slug: 'altair', label: 'Altair Studio', icon: 'altair' },
   { slug: 'email', label: 'Email', icon: Mail01Icon },
   { slug: 'linkedin', label: 'LinkedIn', icon: Linkedin01Icon },
@@ -344,15 +344,21 @@ const hugeicon = (icon, x, y, size, color) => {
   return `<g transform="translate(${x} ${y}) scale(${size / 24})" fill="none">${body}</g>`;
 };
 
+// The drawn portrait, small enough to sit in a link chip.
+const AVATAR = `data:image/png;base64,${(await sharp(path.join(HERE, 'src', 'avatar.png')).extract({ left: 250, top: 110, width: 780, height: 780 }).resize(72, 72).png({ palette: true }).toBuffer()).toString('base64')}`;
+
 function chip(l, themeName) {
   const c = THEMES[themeName];
   const H = 34, M = 3, PAD = 12, ICON = 15, GAP = 8, SIZE = 13;
   const w = PAD + ICON + GAP + width(MED, l.label, SIZE, -0.1) + PAD;
   const W = Math.ceil(w + M * 2);
   const iy = M + (H - ICON) / 2;
+  const AV = 20, ax = M + PAD - (AV - ICON) / 2, ay = M + (H - AV) / 2;
   const icon = l.icon === 'altair'
     ? altairMark(M + PAD, iy, ICON, c.fg, c.card)
-    : hugeicon(l.icon, M + PAD, iy, ICON, c.muted);
+    : l.icon === 'avatar'
+      ? `<clipPath id="av"><circle cx="${ax + AV / 2}" cy="${ay + AV / 2}" r="${AV / 2}"/></clipPath><image href="${AVATAR}" x="${ax}" y="${ay}" width="${AV}" height="${AV}" clip-path="url(#av)"/><circle cx="${ax + AV / 2}" cy="${ay + AV / 2}" r="${AV / 2 - 0.25}" fill="none" stroke="${c.ring}" stroke-width=".5"/>`
+      : hugeicon(l.icon, M + PAD, iy, ICON, c.muted);
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H + M * 2}" viewBox="0 0 ${W} ${H + M * 2}" role="img" aria-label="${l.label}"><title>${l.label}</title>`
     + `<rect x="${M + 0.5}" y="${M + 0.5}" width="${w - 1}" height="${H - 1}" rx="9.5" fill="${c.card}" stroke="${c.ring}"/>${icon}`
     + text(MED, l.label, M + PAD + ICON + GAP, M + H / 2 + 4.6, SIZE, c.fg, { track: -0.1 }) + '</svg>';
