@@ -11,6 +11,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import opentype from 'opentype.js';
 import sharp from 'sharp';
+import { Globe02Icon, Mail01Icon, Linkedin01Icon, NewTwitterIcon } from '@hugeicons/core-free-icons';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(HERE, '..', 'assets');
@@ -40,6 +41,14 @@ const THEMES = {
 const BLUE = '#0d99ff';
 const OUT_EASE = 'cubic-bezier(.2,.8,.2,1)';
 const IN_OUT = 'cubic-bezier(.65,0,.35,1)';
+
+const LINKS = [
+  { slug: 'site', label: 'nathandona.com', icon: Globe02Icon },
+  { slug: 'altair', label: 'Altair Studio', icon: 'altair' },
+  { slug: 'email', label: 'Email', icon: Mail01Icon },
+  { slug: 'linkedin', label: 'LinkedIn', icon: Linkedin01Icon },
+  { slug: 'x', label: 'X', icon: NewTwitterIcon },
+];
 
 /* ------------------------------------------------------------------ type */
 
@@ -315,6 +324,63 @@ async function tile(p, themeName) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${TW}" height="${TH}" viewBox="0 0 ${TW} ${TH}" role="img" aria-label="${p.name}: ${p.desc}"><title>${p.name}</title><style>${s.css()}${REDUCED}</style>${out}</svg>`;
 }
 
+/* ------------------------------------------------------------------ links */
+
+// The Altair mark: a rounded square with the chevron, inverted in dark mode so it never sinks
+// into GitHub's dark background.
+const ALTAIR_PATH = 'M28.6 14h6.8L51 50h-7.4L32 22.4 20.4 50H13z';
+const altairMark = (x, y, size, square, glyph) =>
+  `<g transform="translate(${x} ${y}) scale(${size / 64})"><rect width="64" height="64" rx="15" fill="${square}"/><path d="${ALTAIR_PATH}" fill="${glyph}"/></g>`;
+const altairIcon = (themeName) => {
+  const [sq, gl] = themeName === 'dark' ? ['#f4f4f5', '#0a0a0a'] : ['#161616', '#ffffff'];
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><title>Altair Studio</title>${altairMark(0, 0, 64, sq, gl)}</svg>`;
+};
+
+// Hugeicons are [tag, attrs] arrays drawn on a 24px grid.
+const hugeicon = (icon, x, y, size, color) => {
+  const kebab = (k) => k.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`);
+  const body = icon.map(([tag, attrs]) => `<${tag} ${Object.entries(attrs).filter(([k]) => k !== 'key')
+    .map(([k, v]) => `${kebab(k)}="${v === 'currentColor' ? color : v}"`).join(' ')}/>`).join('');
+  return `<g transform="translate(${x} ${y}) scale(${size / 24})" fill="none">${body}</g>`;
+};
+
+function chip(l, themeName) {
+  const c = THEMES[themeName];
+  const H = 34, M = 3, PAD = 12, ICON = 15, GAP = 8, SIZE = 13;
+  const w = PAD + ICON + GAP + width(MED, l.label, SIZE, -0.1) + PAD;
+  const W = Math.ceil(w + M * 2);
+  const iy = M + (H - ICON) / 2;
+  const icon = l.icon === 'altair'
+    ? altairMark(M + PAD, iy, ICON, c.fg, c.card)
+    : hugeicon(l.icon, M + PAD, iy, ICON, c.muted);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H + M * 2}" viewBox="0 0 ${W} ${H + M * 2}" role="img" aria-label="${l.label}"><title>${l.label}</title>`
+    + `<rect x="${M + 0.5}" y="${M + 0.5}" width="${w - 1}" height="${H - 1}" rx="9.5" fill="${c.card}" stroke="${c.ring}"/>${icon}`
+    + text(MED, l.label, M + PAD + ICON + GAP, M + H / 2 + 4.6, SIZE, c.fg, { track: -0.1 }) + '</svg>';
+}
+
+/* ------------------------------------------------------------------ companies */
+
+// Each company mark sits in the same rounded square as the Altair icon, in one ink, so the
+// experience list reads as one set. Paths come from each company's own logo (src/marks).
+const MARKS = JSON.parse(fs.readFileSync(path.join(HERE, 'src', 'marks', 'marks.json'), 'utf8'));
+// NETexcom's logo fuses its cloud with the lettering, so the cloud is redrawn as one clean shape.
+const CLOUD = (fill) => `<g fill="${fill}"><circle cx="21.5" cy="36" r="8"/><circle cx="32" cy="28.5" r="11"/><circle cx="43" cy="35" r="9"/><rect x="21.5" y="34" width="21.5" height="10"/></g>`;
+function companyIcon(slug, themeName, fit = 36) {
+  if (slug === 'netexcom') {
+    const [sq, gl] = themeName === 'dark' ? ['#f4f4f5', '#0a0a0a'] : ['#161616', '#ffffff'];
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="${sq}"/><g transform="translate(0 -4)">${CLOUD(gl)}</g></svg>`;
+  }
+  const { d, box, rule, clip, stroke } = MARKS[slug];
+  const [sq, gl] = themeName === 'dark' ? ['#f4f4f5', '#0a0a0a'] : ['#161616', '#ffffff'];
+  const [x0, y0, x1, y1] = box;
+  const k = fit / Math.max(x1 - x0, y1 - y0);
+  const tx = 32 - ((x0 + x1) / 2) * k, ty = 32 - ((y0 + y1) / 2) * k;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="${sq}"/>`
+    + (clip ? `<clipPath id="c"><path d="${clip}"/></clipPath>` : '')
+    + `<g transform="translate(${tx.toFixed(2)} ${ty.toFixed(2)}) scale(${k.toFixed(5)})"${clip ? ' clip-path="url(#c)"' : ''}>`
+    + `<path fill="${gl}" fill-rule="${rule}"${stroke ? ` stroke="${gl}" stroke-width="${stroke}" stroke-linejoin="round"` : ''} d="${d}"/></g></svg>`;
+}
+
 /* ------------------------------------------------------------------ write */
 
 const write = (name, svg) => {
@@ -324,4 +390,9 @@ const write = (name, svg) => {
 for (const t of Object.keys(THEMES)) {
   write(`hero-${t}.svg`, hero(t));
   for (const p of PROJECTS) write(`tile-${p.slug}-${t}.svg`, await tile(p, t));
+  for (const l of LINKS) write(`link-${l.slug}-${t}.svg`, chip(l, t));
+  write(`altair-${t}.svg`, altairIcon(t));
+  write(`co-ovh-${t}.svg`, companyIcon('ovh', t, 38));
+  write(`co-netexcom-${t}.svg`, companyIcon('netexcom', t, 44));
+  write(`co-basesud-${t}.svg`, companyIcon('basesud', t, 34));
 }
