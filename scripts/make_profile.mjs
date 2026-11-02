@@ -43,7 +43,7 @@ const OUT_EASE = 'cubic-bezier(.2,.8,.2,1)';
 const IN_OUT = 'cubic-bezier(.65,0,.35,1)';
 
 const LINKS = [
-  { slug: 'site', label: 'nathandona.com', icon: 'avatar' },
+  { slug: 'site', label: 'Portfolio', icon: 'avatar' },
   { slug: 'altair', label: 'Altair Studio', icon: 'altair' },
   { slug: 'email', label: 'Email', icon: Mail01Icon },
   { slug: 'linkedin', label: 'LinkedIn', icon: Linkedin01Icon },
