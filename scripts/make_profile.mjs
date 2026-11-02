@@ -365,10 +365,12 @@ function chip(l, themeName) {
 const MARKS = JSON.parse(fs.readFileSync(path.join(HERE, 'src', 'marks', 'marks.json'), 'utf8'));
 // NETexcom's logo fuses its cloud with the lettering, so the cloud is redrawn as one clean shape.
 const CLOUD = (fill) => `<g fill="${fill}"><circle cx="21.5" cy="36" r="8"/><circle cx="32" cy="28.5" r="11"/><circle cx="43" cy="35" r="9"/><rect x="21.5" y="34" width="21.5" height="10"/></g>`;
+// Bounding box of the cloud: x 13.5 to 52 (left and right circles), y 17.5 to 44 (top circle to base).
+const CLOUD_DX = 32 - (13.5 + 52) / 2, CLOUD_DY = 32 - (17.5 + 44) / 2;
 function companyIcon(slug, themeName, fit = 36) {
   if (slug === 'netexcom') {
     const [sq, gl] = themeName === 'dark' ? ['#f4f4f5', '#0a0a0a'] : ['#161616', '#ffffff'];
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="${sq}"/><g transform="translate(0 -4)">${CLOUD(gl)}</g></svg>`;
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="${sq}"/><g transform="translate(${CLOUD_DX} ${CLOUD_DY})">${CLOUD(gl)}</g></svg>`;
   }
   const { d, box, rule, clip, stroke } = MARKS[slug];
   const [sq, gl] = themeName === 'dark' ? ['#f4f4f5', '#0a0a0a'] : ['#161616', '#ffffff'];
